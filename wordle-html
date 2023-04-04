@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
+<style>
+.myDiv {
+  background-color: white;    
+  text-align: center;
+}
+
+
+
+#board-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  
+  }
+
+#board {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 5px;
+    padding:20px;
+    box-sizing: border-box;
+ 
+  
+    }
+   
+
+  .tile {
+    border: solid 2px #cecece;
+    height: calc(19vw - 18px);
+    width: calc(19vw - 18px);
+    max-width: 60px;
+    max-height: 60px;
+    margin: 0px 2px;
+    display: inline-flex;
+    vertical-align: top;
+    margin-top: 5px;
+    text-align: center;
+    transition:.2s;
+    color:#000;
+       content: '';
+      <! display: inline-block;>
+       padding-bottom: 100%;  
+}
+
+#keyboard {
+    margin: 0 auto 20px;
+    user-select: none;
+    padding-top: 20px
+  }
+  
+  .key-row {
+    display: flex;
+    width: 100%;
+    margin: 0 auto 8px;
+    touch-action: manipulation;
+  }
+
+button {
+    font-family: inherit;
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    margin: 0 6px 0 0;
+    height: 58px;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    background-color: lightgray;
+    color: black;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    -webkit-tap-highlight-color: rgba(0,0,0,0.3);
+    font-size: 26px;
+  }
+  
+  button:last-of-type {
+    margin: 0;
+  }
+  
+  .half {
+    flex: 0.5;
+  }
+  
+  .one {
+    flex: 1;
+  }
+
+  .one-and-a-half {
+    flex: 1.5;
+    font-size: 24px;
+  }
+
+p {text-align: center; font-family: 'Dongle', sans-serif;}
+div {font-family: 'Dongle', sans-serif;}
+h1 {
+	display: block; 
+    font-size:60px; 
+    text-align: center; 
+    font-family: 'Dongle', sans-serif; 
+    background: white;
+    color: black;
+    margin: 0px 0px;
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: 1px solid lightgray;
+    }
+
+</style>
+</head>
+<body>
+
+<h1>SIX LETTER WORDLE</h1>
+
+<div class="myDiv">
+  <div id="board-container">
+    <div id="board" style="width: 500px; height: 420px;">
+      <div class="row">
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+       
+      </div>
+      
+      <div class="row">
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+       
+      </div> 
+      
+      <div class="row">
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+       <div class="tile"> 
+           <!::before>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+       
+      </div>
+      
+      <div class="row">
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+       
+      </div>
+     
+    </div>
+    </div>
+  <div id="keyboard">
+    <div class="key-row">
+      <button data-key="q">q</button>
+      <button data-key="w">w</button>
+      <button data-key="e">e</button>
+      <button data-key="r">r</button>
+      <button data-key="t">t</button>
+      <button data-key="y">y</button>
+      <button data-key="u">u</button>
+      <button data-key="i">i</button>
+      <button data-key="o">o</button>
+      <button data-key="p">p</button>
+    </div>
+    <div class="key-row">
+      <div class="spacer half"></div>
+      <button data-key="a">a</button>
+      <button data-key="s">s</button>
+      <button data-key="d">d</button>
+      <button data-key="f">f</button>
+      <button data-key="g">g</button>
+      <button data-key="h">h</button>
+      <button data-key="j">j</button>
+      <button data-key="k">k</button>
+      <button data-key="l">l</button>
+      <div class="spacer half"></div>
+    </div>
+    <div class="key-row">
+      <button data-key="↵" class="one-and-a-half">enter</button>
+      <button data-key="z">z</button>
+      <button data-key="x">x</button>
+      <button data-key="c">c</button>
+      <button data-key="v">v</button>
+      <button data-key="b">b</button>
+      <button data-key="n">n</button>
+      <button data-key="m">m</button>
+      <button data-key="←" class="one-and-a-half">
+        <game-icon icon="backspace">
+        	<svg xmlns="http://www.w3.org/2000/svg" height="24" 
+        	viewBox="0 0 24 24" width="24">
+        	<path fill="var(--color-tone-1)" d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7.07L2.4 12l4.66-7H22v14zm-11.59-2L14 13.41 17.59 17 19 15.59 15.41 12 19 8.41 17.59 7 14 10.59 10.41 7 9 8.41 12.59 12 9 15.59z"></path>
+  			</svg>
+        </game-icon>
+      </button>
+  
+    </div>
+  </div>
+
+</div>
+
+
+</body>
+</html>
