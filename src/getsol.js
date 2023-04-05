@@ -1,6 +1,6 @@
 function getSol() {
     const fs = require('fs');
-    const words = fs.readFileSync('../public/solutions.txt', 'utf-8').split('\n');
+    const words = fs.readFileSync('../src/solutions.txt', 'utf-8').split('\n');
     const filteredWords = words.filter(word => word.trim().length === 6);
     const randomIndex = Math.floor(Math.random() * filteredWords.length);
 
