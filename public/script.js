@@ -2,11 +2,13 @@ let guessesRemaining = 7;
 let nextLetter = 0;
 let currentGuess = [];
 let solution = '';
-fetch('/get-sol')
-    .then(response => response.text())
+fetch('../src/words.json')
+    .then(response => response.json())
     .then(data => {
-        solution = data;
-        console.log(solution); // this will output the value of solution after it has been assigned the response text
+        const words = data.words;
+        const randomIndex = Math.floor(Math.random() * words.length);
+        solution = words[randomIndex];
+        console.log(solution);
     });
 let letterColor = '';
 
