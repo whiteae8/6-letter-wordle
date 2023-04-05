@@ -1,0 +1,571 @@
+//seriously apologies that i hard coded the javascript into the html file but IDC it works
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
+<style>
+.myDiv {
+  background-color: white;    
+  text-align: center;
+}
+
+
+
+#board-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  
+  }
+
+#board {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 5px;
+    padding:10px;
+    box-sizing: border-box;
+    }
+   
+
+  .tile {
+    border: solid 2px #cecece;
+    height: calc(19vw - 18px);
+    width:12%;
+    max-width: 55px;
+    max-height: 55px;
+    font-size: 75px;
+    font-weight: 300;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 2px;
+    display: inline-flex;
+    vertical-align: top;
+    background-color: white;
+    margin-top: 5px;
+    text-align: center;
+    transition:.2s;
+    color:#000;
+       content: '';
+      <! display: inline-block;>
+       padding-bottom: 50%;  
+}
+
+#keyboard {
+    margin: 0 auto 20px;
+    user-select: none;
+    padding-top: 5px
+  }
+  
+  .key-row {
+    display: flex;
+    width: 40%;
+    margin: 0 auto 8px;
+    touch-action: manipulation; 
+  }
+
+button {
+    font-family: inherit;
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    margin: 0 6px 0 0;
+    height: 55px;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    background-color: lightgray;
+    color: black;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    -webkit-tap-highlight-color: rgba(0,0,0,0.3);
+    font-size: 26px;
+  }
+  
+  button:last-of-type {
+    margin: 0;
+  }
+  
+  .half {
+    flex: 0.5;
+  }
+  
+  .one {
+    flex: 1;
+  }
+
+  .one-and-a-half {
+    flex: 1.5;
+    font-size: 24px;
+  }
+
+p {text-align: center; font-family: 'Dongle', sans-serif;}
+div {font-family: 'Dongle', sans-serif;}
+h1 {
+	display: block; 
+    font-size:57px; 
+    text-align: center; 
+    font-family: 'Dongle', sans-serif; 
+    background: white;
+    color: black;
+    margin: 0px 0px;
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: 1px solid lightgray;
+    }
+
+</style>
+</head>
+<body>
+
+<h1>SIX LETTER WORDLE</h1>
+
+<div class="myDiv">
+  <div id="board-container">
+    <div id="board" style="position: relative; width: 500px;">
+      <div class="row">
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+       
+      </div>
+      
+      <div class="row">
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+       
+      </div> 
+      
+      <div class="row">
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+       <div class="tile"> 
+           <!::before>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+       
+      </div>
+      
+      <div class="row">
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+       
+      </div>
+      
+      <div class="row">
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+        <div class="tile"> 
+           <!::before>
+        </div>
+        
+       
+      </div>
+     
+    </div>
+    </div>
+  <div id="keyboard">
+    <div class="key-row">
+      <button data-key="q" value="q" onclick="pressKey(this.value)">q</button>
+      <button data-key="w" value='w' onclick="pressKey(this.value)">w</button>
+      <button data-key="e" value="e" onclick="pressKey(this.value)">e</button>
+      <button data-key="r" value='r' onclick="pressKey(this.value)">r</button>
+      <button data-key="t" value='t' onclick="pressKey(this.value)">t</button>
+      <button data-key="y" value='y' onclick="pressKey(this.value)">y</button>
+      <button data-key="u" value='u' onclick="pressKey(this.value)">u</button>
+      <button data-key="i" value='i' onclick="pressKey(this.value)">i</button>
+      <button data-key="o" value='o' onclick="pressKey(this.value)">o</button>
+      <button data-key="p" value='p' onclick="pressKey(this.value)">p</button>
+    </div>
+    <div class="key-row">
+      <div class="spacer half"></div>
+      <button data-key="a" value="a" onclick="pressKey(this.value)">a</button>
+      <button data-key="s" value="s" onclick="pressKey(this.value)">s</button>
+      <button data-key="d" value="d" onclick="pressKey(this.value)">d</button>
+      <button data-key="f" value="f" onclick="pressKey(this.value)">f</button>
+      <button data-key="g" value="g" onclick="pressKey(this.value)">g</button>
+      <button data-key="h" value="h" onclick="pressKey(this.value)">h</button>
+      <button data-key="j" value="j" onclick="pressKey(this.value)">j</button>
+      <button data-key="k" value="k" onclick="pressKey(this.value)">k</button>
+      <button data-key="l" value="l" onclick="pressKey(this.value)">l</button>
+      <div class="spacer half"></div>
+    </div>
+    <div class="key-row">
+      <button data-key="↵" value="Enter" onclick="pressKey(this.value)" class="one-and-a-half">enter</button>
+      <button data-key="z" value="z" onclick="pressKey(this.value)">z</button>
+      <button data-key="x" value="x" onclick="pressKey(this.value)">x</button>
+      <button data-key="c" value="c" onclick="pressKey(this.value)">c</button>
+      <button data-key="v" value="v" onclick="pressKey(this.value)">v</button>
+      <button data-key="b" value="b" onclick="pressKey(this.value)">b</button>
+      <button data-key="n" value="n" onclick="pressKey(this.value)">n</button>
+      <button data-key="m" value="m" onclick="pressKey(this.value)">m</button>
+      <button data-key="←" value="backspace" onclick="pressKey(this.value)" class="one-and-a-half">
+        <game-icon icon="backspace">
+        	<svg xmlns="http://www.w3.org/2000/svg" height="24" 
+        	viewBox="0 0 24 24" width="24">
+        	<path fill="var(--color-tone-1)" d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7.07L2.4 12l4.66-7H22v14zm-11.59-2L14 13.41 17.59 17 19 15.59 15.41 12 19 8.41 17.59 7 14 10.59 10.41 7 9 8.41 12.59 12 9 15.59z"></path>
+  			</svg>
+        </game-icon>
+      </button>
+  
+    </div>
+  </div>
+
+</div>
+
+<script>
+const NUMBER_OF_GUESSES = 6;
+let guessesRemaining = 7;
+let nextLetter = 0;
+let currentGuess = [];
+let solution = getSol();
+let letterColor = '';
+let greenCount = 0;
+
+document.addEventListener("keyup", (e) => {
+
+    if (guessesRemaining === 0) {
+        return;  
+    }
+
+    let pressedKey = String(e.key);
+    if (pressedKey === "Backspace" && nextLetter !== 0) {
+        deleteLetter();
+        return;
+    }
+
+    if (pressedKey === "Enter") {
+        checkGuess();
+        return;
+    }
+
+    let found = pressedKey.match(/[a-z]/gi)
+    if (!found || found.length > 1) {
+        return;
+    } else {
+        
+        pressKey(pressedKey.toLowerCase());
+    }
+});
+
+function getSol() {
+  //const f = require('fs');
+ // var solutions = fs.readFileSync('./CLionProjects/6letterwordle/txt/possible-solutions.txt').toString().split("\n");
+ 
+  const solutions = new Array("access", "bronze", "celery", "domain", "doctor", "escape", "flight", "forest", "genius", "ground", "helmet", "infect", "jacket", "kidnap", "leader", "lizard", "magnet", "meadow", "orange", "parent", "phrase", "quiver", "riddle", "sample", "shriek", "sister", "splash", "thirst", "ticket", "unless", "valley", "vision", "waffle", "wallet", "yellow", "zipper");
+  const min = Math.ceil(0);
+  const max = Math.floor(solutions.length);
+  const number = Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+  alert(solutions[number]);
+  return solutions[number];
+}
+
+
+function deleteLetter () {
+    const tiles = document.getElementsByClassName('tile');
+    let element = tiles[nextLetter + (6*(7-guessesRemaining)) - 1];
+    element.textContent = ""; 
+    nextLetter -= 1;
+    currentGuess.pop();
+} 
+
+function pressKey(val) {
+    if (guessesRemaining === 0 || currentGuess.join('') === solution) {
+        return;  
+    }
+
+    if (val === "Enter") {
+        checkGuess();
+        return;
+    } 
+
+    if (nextLetter === 6) {
+        return;
+    }
+    
+    if (val === "backspace" && nextLetter !== 0) {
+        deleteLetter();
+        return;
+    }
+    
+    let letter = val;
+
+    const tiles = document.getElementsByClassName('tile');
+    let element = tiles[nextLetter + (6*(7-guessesRemaining))];
+    nextLetter += 1;
+    element.textContent = letter; 
+    currentGuess.push(letter);
+   
+}
+
+function checkGuess() {
+   if(nextLetter !== 6) {
+      return;
+   }
+   let row = 7-guessesRemaining;
+   for (var i = 0; i < 6; ++i) {
+      const tiles = document.getElementsByClassName('tile');
+      let element = tiles[i + (6*row)];
+      let button = document.querySelector(`button[data-key="${currentGuess[i]}"]`);
+      letterColor = checkChar(currentGuess[i], i, row);
+      (function(i, letterColor) {
+        setTimeout(() => {
+          element.style.backgroundColor = letterColor;
+          //alert(`letterColor: ${letterColor} solution.indexOf(currentGuess[i]): ${solution.indexOf(currentGuess[i])} button.style.backgroundColor: ${button.style.backgroundColor}next`);
+          
+          if(button.style.backgroundColor !== 'rgb(95, 178, 90)' || letterColor === 'rgb(95, 178, 90)') {
+              if(solution.indexOf(currentGuess[i]) === -1) {
+                 button.style.backgroundColor = 'DarkGray';
+              } else if(letterColor !== 'DarkGray') {
+                 button.style.backgroundColor = letterColor;
+              }   
+          } 
+          element.style.color = 'white';
+        }, 250 * i);
+      })(i, letterColor);
+   }
+   guessesRemaining -= 1;
+   setTimeout(() => {
+      if(currentGuess.join('') === solution) {
+          alert("You Win!");
+          return;
+      }
+      else if(guessesRemaining === 0) {
+          alert("You Lose!");
+          return;
+      }
+      nextLetter = 0;
+      currentGuess = [];
+   }, 1500); // Delay before displaying the "You Win!" alert
+   
+   return;
+}
+
+function checkChar(letter, pos, row) {
+   if(solution[pos] === letter) {
+       letterColor = '#5FB25A';
+       return letterColor;
+   } else if (solution.indexOf(letter) === -1) {
+       letterColor = 'DarkGray';
+       return letterColor;
+   } else {
+       letterColor = rightLetterWrongSpot(letter, pos, row);
+       return letterColor;
+   } 
+   return letterColor;
+}
+
+function rightLetterWrongSpot(letter, guessPos, row) { //guesspos = 4
+  let occurencesInSol = []; // 4 
+  let occurencesInGuess = [];// 2 3
+  let intersection = []; 
+  let count = 0;
+ 
+  for(var i = 0; i < 6; ++i) {
+    if(solution[i] === letter) {
+      occurencesInSol.push(i);
+    } 
+    if(currentGuess[i] === letter) {
+      occurencesInGuess.push(i);
+      if(solution[i] === letter) {
+        intersection.push(i);
+        
+      }
+    }
+  }
+   
+  if(occurencesInGuess.length <= occurencesInSol.length) {
+     letterColor = '#EAD554';
+     return letterColor;
+  } 
+    //more occurences in guess than solution
+    if(occurencesInSol.length === intersection.length) {
+      //got letters in the right spot already
+      letterColor = 'DarkGray';
+      return letterColor;
+    }
+    let index = 6;
+    for(var i = 0; i < occurencesInGuess.length; ++i) {
+     //  num = occurencesInSol.indexOf(occurencesInGuess[i], i);
+       if(intersection.indexOf(occurencesInGuess[i]) === -1) {
+         count += 1;
+         if(occurencesInGuess[i] === guessPos) {
+            index = count;
+         }
+       }
+    }
+ 
+    if(index <= occurencesInSol.length - intersection.length) {
+        letterColor = '#EAD554';
+        
+    } else {
+        letterColor = 'DarkGray';   
+    }
+  return letterColor;
+ 
+}
+
+</script>
+
+</body>
+</html>
