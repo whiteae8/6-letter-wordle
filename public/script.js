@@ -2,7 +2,7 @@ let guessesRemaining = 7;
 let nextLetter = 0;
 let currentGuess = [];
 let solution = '';
-fetch('/get-solution')
+fetch('/get-sol')
     .then(response => response.text())
     .then(data => {
         solution = data;
