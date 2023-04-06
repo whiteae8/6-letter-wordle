@@ -2,7 +2,7 @@ let guessesRemaining = 7;
 let nextLetter = 0;
 let currentGuess = [];
 let solution = '';
-fetch('../src/words.json')
+fetch('https://raw.githubusercontent.com/whiteae8/6-letter-wordle/main/public/words.json')
     .then(response => response.json())
     .then(data => {
         const words = data.words;
