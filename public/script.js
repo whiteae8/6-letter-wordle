@@ -2,7 +2,7 @@ let guessesRemaining = 7;
 let nextLetter = 0;
 let currentGuess = [];
 let solution = '';
-fetch('https://whiteae8.github.io/6-letter-wordle/public/words.json')
+fetch('../src/words.json')
     .then(response => response.json())
     .then(data => {
         const words = data.words;
@@ -103,13 +103,11 @@ function checkGuess() {
     guessesRemaining -= 1;
     setTimeout(() => {
         if(currentGuess.join('') === solution) {
-            alert("You Win!");
-            console.log("You win!");
+            gameEnd("win");
             return;
         }
         else if(guessesRemaining === 0) {
-            console.log("You lose!");
-            alert("You Lose!");
+            gameEnd("lose");
             return;
         }
         nextLetter = 0;
@@ -176,4 +174,45 @@ function rightLetterWrongSpot(letter, guessPos) { //guesspos = 4
         letterColor = 'DarkGray';
     }
     return letterColor;
+}
+
+function gameEnd(score) {
+    // Create the popup container
+    var container = document.createElement("div");
+    container.classList.add("popup-container");
+    var paragraph = document.createElement("p");
+    if(score === "win") {
+        container.innerHTML = "<h1>You Win!</h1><button class='popup-close'>X</button>";
+        paragraph.textContent = "Congratulations, you have won the game!";
+    } else {
+        container.innerHTML = "<h1>You Lose!</h1><button class='popup-close'>X</button>";
+        paragraph.textContent = "Sorry, the correct answer was " + solution;
+    }
+
+    // Create the close button
+    var button = container.querySelector(".popup-close");
+
+    // Add event listener to the button
+    button.addEventListener("click", function() {
+        // Remove the popup container and the button from the DOM
+        document.body.removeChild(container);
+       // document.body.removeChild(button);
+        document.body.removeChild(overlay);
+    });
+
+    var overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+    overlay.style.opacity = "0";
+
+    // Append the popup container and the button to the DOM
+    document.body.appendChild(overlay);
+    document.body.appendChild(container);
+    container.appendChild(paragraph);
+    container.appendChild(button);
+
+    var fadeIn = setInterval(function () {
+        if (overlay.style.opacity > 0.98) clearInterval(fadeIn);
+        overlay.style.opacity= parseFloat(overlay.style.opacity,10)+0.05;
+        console.log(parseFloat(overlay.style.opacity,10));
+    }, 25);
 }
