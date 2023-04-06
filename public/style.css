@@ -1,6 +1,6 @@
 .myDiv {
-  background-color: white;    
-  text-align: center;
+    background-color: white;
+    text-align: center;
 }
 
 #board-container {
@@ -8,8 +8,8 @@
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-  
-  }
+
+}
 
 #board {
     display: grid;
@@ -17,10 +17,10 @@
     grid-gap: 5px;
     padding:10px;
     box-sizing: border-box;
-    }
-   
+}
 
-  .tile {
+
+.tile {
     border: solid 2px #cecece;
     height: calc(19vw - 18px);
     width:12%;
@@ -39,23 +39,23 @@
     text-align: center;
     transition:.2s;
     color:#000;
-       content: '';
-      <! display: inline-block;>
-       padding-bottom: 50%;  
+    content: '';
+<! display: inline-block;>
+padding-bottom: 50%;
 }
 
 #keyboard {
     margin: 0 auto 20px;
     user-select: none;
     padding-top: 5px
-  }
-  
-  .key-row {
+}
+
+.key-row {
     display: flex;
     width: 40%;
     margin: 0 auto 8px;
-    touch-action: manipulation; 
-  }
+    touch-action: manipulation;
+}
 
 button {
     font-family: inherit;
@@ -76,32 +76,82 @@ button {
     text-transform: uppercase;
     -webkit-tap-highlight-color: rgba(0,0,0,0.3);
     font-size: 26px;
-  }
-  
-  button:last-of-type {
+}
+
+button:last-of-type {
     margin: 0;
-  }
-  .half {
+}
+.half {
     flex: 0.5;
-  }
-  .one {
+}
+.one {
     flex: 1;
-  }
-  .one-and-a-half {
+}
+.one-and-a-half {
     flex: 1.5;
     font-size: 24px;
-  }
+}
 
 p {text-align: center; font-family: 'Dongle', sans-serif;}
 div {font-family: 'Dongle', sans-serif;}
 h1 {
-	display: block; 
-    font-size:57px; 
-    text-align: center; 
-    font-family: 'Dongle', sans-serif; 
+    display: block;
+    font-size:57px;
+    text-align: center;
+    font-family: 'Dongle', sans-serif;
     background: white;
     color: black;
     margin: 0px 0px;
     border-radius: 10px 10px 0px 0px;
     border-bottom: 1px solid lightgray;
-    }
+}
+
+.popup-container {
+    z-index: 900;
+    position:absolute;
+    top:12%;
+    left:50%;
+    margin-left:-200px;
+    font-family: 'Dongle', sans-serif;
+    width: 400px;
+    text-align: center;
+    height:400px;
+    background-color:#FFF;
+    padding:5px;
+    border-radius:4px;
+    color:#000;
+}
+
+.popup-close {
+    position: absolute;
+    top: 25px;
+    z-index: 1000;
+    right: 25px;
+    font-family: 'Dongle', sans-serif;
+    border-radius:4px;
+    width: 5px;
+    height: 5px
+}
+
+.popup-container h1 {
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.popup-container p {
+    font-size: 50px;
+    font-weight: normal;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
