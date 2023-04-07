@@ -28,7 +28,7 @@ document.addEventListener("keydown", (e) => {
         return;
     }
 
-    if (pressedKey === "Backspace" && nextLetter !== 0) {
+    if (pressedKey === "Backspace") {
         deleteLetter();
         return;
     }
@@ -43,6 +43,9 @@ document.addEventListener("keydown", (e) => {
 
 
 function deleteLetter () {
+    if (nextLetter === 0) {
+        return;
+    }
     const tiles = document.getElementsByClassName('tile');
     let element = tiles[nextLetter + (6*(7-guessesRemaining)) - 1];
     element.textContent = "";
@@ -63,7 +66,7 @@ function pressKey(val) {
         return;
     }
 
-    if (val === "Backspace" && nextLetter !== 0) {
+    if (val === "Backspace") {
         deleteLetter();
         return;
     }
@@ -226,3 +229,4 @@ function gameEnd(score) {
         console.log(parseFloat(overlay.style.opacity,10));
     }, 25);
 }
+
