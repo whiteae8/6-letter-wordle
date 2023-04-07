@@ -2,6 +2,7 @@ let guessesRemaining = 7;
 let nextLetter = 0;
 let currentGuess = [];
 let solution = '';
+let checkingGuess = false;
 fetch('https://raw.githubusercontent.com/whiteae8/6-letter-wordle/main/public/words.json')
     .then(response => response.json())
     .then(data => {
@@ -12,20 +13,23 @@ fetch('https://raw.githubusercontent.com/whiteae8/6-letter-wordle/main/public/wo
     });
 let letterColor = '';
 
-document.addEventListener("keyup", (e) => {
+document.addEventListener("keydown", (e) => {
 
+    if (checkingGuess) {
+        return;
+    }
     if (guessesRemaining === 0) {
         return;
     }
-
     let pressedKey = String(e.key);
-    if (pressedKey === "Backspace" && nextLetter !== 0) {
-        deleteLetter();
+    if (pressedKey === "Enter") {
+        e.preventDefault();
+        checkGuess();
         return;
     }
 
-    if (pressedKey === "Enter") {
-        checkGuess();
+    if (pressedKey === "Backspace" && nextLetter !== 0) {
+        deleteLetter();
         return;
     }
 
@@ -47,7 +51,10 @@ function deleteLetter () {
 }
 
 function pressKey(val) {
-    if (guessesRemaining === 0 || currentGuess.join('') === solution) {
+    if (checkingGuess) {
+        return;
+    }
+    if (guessesRemaining === 0) {
         return;
     }
 
@@ -56,12 +63,12 @@ function pressKey(val) {
         return;
     }
 
-    if (nextLetter === 6) {
+    if (val === "Backspace" && nextLetter !== 0) {
+        deleteLetter();
         return;
     }
 
-    if (val === "backspace" && nextLetter !== 0) {
-        deleteLetter();
+    if (nextLetter === 6) {
         return;
     }
 
@@ -79,6 +86,7 @@ function checkGuess() {
     if(nextLetter !== 6) {
         return;
     }
+    checkingGuess = true;
     let row = 7-guessesRemaining;
     for (let i = 0; i < 6; ++i) {
         const tiles = document.getElementsByClassName('tile');
@@ -103,6 +111,7 @@ function checkGuess() {
     guessesRemaining -= 1;
     setTimeout(() => {
         if(currentGuess.join('') === solution) {
+            guessesRemaining = 0
             gameEnd("win");
             return;
         }
@@ -112,6 +121,7 @@ function checkGuess() {
         }
         nextLetter = 0;
         currentGuess = [];
+        checkingGuess = false;
     }, 1500); // Delay before displaying the "You Win!" alert
 }
 
@@ -129,17 +139,17 @@ function checkChar(letter, pos) {
 }
 
 function rightLetterWrongSpot(letter, guessPos) { //guesspos = 4
-    let occurencesInSol = []; // 4
-    let occurencesInGuess = [];// 2 3
+    let occurrencesInSol = []; // 4
+    let occurrencesInGuess = [];// 2 3
     let intersection = [];
     let count = 0;
 
     for(let i = 0; i < 6; ++i) {
         if(solution[i] === letter) {
-            occurencesInSol.push(i);
+            occurrencesInSol.push(i);
         }
         if(currentGuess[i] === letter) {
-            occurencesInGuess.push(i);
+            occurrencesInGuess.push(i);
             if(solution[i] === letter) {
                 intersection.push(i);
 
@@ -147,27 +157,27 @@ function rightLetterWrongSpot(letter, guessPos) { //guesspos = 4
         }
     }
 
-    if(occurencesInGuess.length <= occurencesInSol.length) {
+    if(occurrencesInGuess.length <= occurrencesInSol.length) {
         letterColor = '#EAD554';
         return letterColor;
     }
-    //more occurences in guess than solution
-    if(occurencesInSol.length === intersection.length) {
+    //more occurrences in guess than solution
+    if(occurrencesInSol.length === intersection.length) {
         //got letters in the right spot already
         letterColor = 'DarkGray';
         return letterColor;
     }
     let index = 6;
-    for(let i = 0; i < occurencesInGuess.length; ++i) {
-        if(intersection.indexOf(occurencesInGuess[i]) === -1) {
+    for(let i = 0; i < occurrencesInGuess.length; ++i) {
+        if(intersection.indexOf(occurrencesInGuess[i]) === -1) {
             count += 1;
-            if(occurencesInGuess[i] === guessPos) {
+            if(occurrencesInGuess[i] === guessPos) {
                 index = count;
             }
         }
     }
 
-    if(index <= occurencesInSol.length - intersection.length) {
+    if(index <= occurrencesInSol.length - intersection.length) {
         letterColor = '#EAD554';
 
     } else {
@@ -178,9 +188,9 @@ function rightLetterWrongSpot(letter, guessPos) { //guesspos = 4
 
 function gameEnd(score) {
     // Create the popup container
-    var container = document.createElement("div");
+    let container = document.createElement("div");
     container.classList.add("popup-container");
-    var paragraph = document.createElement("p");
+    let paragraph = document.createElement("p");
     if(score === "win") {
         container.innerHTML = "<h1>You Win!</h1><button class='popup-close'>X</button>";
         paragraph.textContent = "Congratulations, you have won the game!";
@@ -190,7 +200,7 @@ function gameEnd(score) {
     }
 
     // Create the close button
-    var button = container.querySelector(".popup-close");
+    let button = container.querySelector(".popup-close");
 
     // Add event listener to the button
     button.addEventListener("click", function() {
@@ -200,7 +210,7 @@ function gameEnd(score) {
         document.body.removeChild(overlay);
     });
 
-    var overlay = document.createElement("div");
+    let overlay = document.createElement("div");
     overlay.classList.add("overlay");
     overlay.style.opacity = "0";
 
@@ -210,7 +220,7 @@ function gameEnd(score) {
     container.appendChild(paragraph);
     container.appendChild(button);
 
-    var fadeIn = setInterval(function () {
+    let fadeIn = setInterval(function () {
         if (overlay.style.opacity > 0.98) clearInterval(fadeIn);
         overlay.style.opacity= parseFloat(overlay.style.opacity,10)+0.05;
         console.log(parseFloat(overlay.style.opacity,10));
